@@ -8,12 +8,16 @@ function ListTasks() {
     <div className="table-responsive">
       <table className="table table-primary border-primary">
         <thead>
-          <tr>
-            <th>Title</th>
-            <th>Details</th>
-            <th>Date</th>
-            <th>Time</th>
-          </tr>
+          {tasks.length > 0 ? (
+            <tr>
+              <th>Title</th>
+              <th>Details</th>
+              <th>Date</th>
+              <th>Time</th>
+            </tr>
+          ) : (
+            <h3 className="text-center text-danger">No Todos</h3>
+          )}
         </thead>
         <tbody>{tasks && table(tasks)}</tbody>
       </table>
